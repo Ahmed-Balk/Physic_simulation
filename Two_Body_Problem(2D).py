@@ -116,11 +116,12 @@ def Animate_2b(i,head1,head2):
     bx.plot(t[:i],V_1[:i],color = 'b')
     cx.plot(t[:i],V_2[:i],color = 'r')
 
-    return t1,t2,h1,h2
-
-plt.show()  
+    return t1,t2,h1,h2  
 
 anim_2b = animation.FuncAnimation(fig,Animate_2b,frames=750,interval=300,repeat=False,blit=False,fargs=(h1,h2))
 FFwriter = animation.FFMpegWriter(fps=30, bitrate=4000, metadata=dict(artist = "me"))
+
+plt.show()
+
 anim_2b.save("twobodyproblem2.mp4",writer = FFwriter)
 
